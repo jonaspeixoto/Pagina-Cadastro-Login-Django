@@ -3,8 +3,8 @@ from django.http import HttpResponse
 
 
 def login(request):
-    return HttpResponse('login')
+    return render(request, 'login.html' )
 
 
 def cadastro(request):
-    return HttpResponse('cadastro')
+     return render(request, 'cadastro.html' )
