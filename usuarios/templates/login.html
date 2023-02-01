@@ -2,5 +2,62 @@
 
 {% block 'titulo' %} Login  {% endblock %}
 
-{% block 'conteudo' %} {% endblock %}
+
+{% block 'conteudo' %} 
+    <div class="container" >
+        <br>
+        {% if status == '0'  %}
+            <div class="alert alert-success" role="alert">
+                Usuario cadastrado com sucesso
+            </div>
+        {% endif %}
+
+        {% if status == '1'  %}
+            <div class="alert alert-danger" role="alert">
+               Nome e email não podem está vazio.
+            </div>
+        {% endif %}  
+        {% if status == '2'  %}
+            <div class="alert alert-danger" role="alert">
+               Sua Senha deve ter no minimo 8 caracteres
+            </div>
+        {% endif %}
+
+        {% if status == '3'  %}
+            <div class="alert alert-danger" role="alert">
+               Email já cadastrado
+            </div>
+        {% endif %}
+        {% if status == '4'  %}
+            <div class="alert alert-danger" role="alert">
+               Erro inteno do sistema
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-3">
+                <br>
+                <h1>Logar</h1>
+                <hr>
+                <form method="POST" action="{% url 'valida_login' %}"> {% csrf_token %}
+                    <label ">Email:</label>
+                    <input name="email" class="form-control" type="email" placeholder="Esmail...">
+                    <br>
+                    <label ">Senha:</label>
+                    <input name="senha" class="form-control" type="password" placeholder="Senha...">
+                    <br>
+                    <input class="btn btn-success btn-lg "type="submit" value="Enviar">
+                    
+                    <a href="{% url 'cadastro' %}" class="btn btn-info btn-lg">Cadastre-se</a>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    
+
+{% endblock %}
 
