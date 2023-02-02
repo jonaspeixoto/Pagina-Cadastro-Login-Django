@@ -53,9 +53,12 @@ def valida_login(request):
 
     elif len(usuario) > 0:
         request.session['logado'] = True
+        request.session['usuario_id'] = usuario[0].id
+
         return redirect('/plataforma/home')
 
 def sair(request):
-        request.session['logado'] = None
-        return redirect('/auth/login')
+    return HttpResponse(request.session.get_expiry_age())
+    # request.session.flush()
+    # return redirect('/auth/login')
 
