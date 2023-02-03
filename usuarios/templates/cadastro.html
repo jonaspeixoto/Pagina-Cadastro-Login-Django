@@ -4,34 +4,13 @@
 {% block 'conteudo' %} 
     <div class="container" >
         <br>
-        {% if status == '0'  %}
-            <div class="alert alert-success" role="alert">
-                Usuario cadastrado com sucesso
+        {% if messages %}
+            {% for i in massages %}
+            <div class="alert {{i.tags}} " role="alert">
+                {{i}}
             </div>
+            {% endfor %}
         {% endif %}
-
-        {% if status == '1'  %}
-            <div class="alert alert-danger" role="alert">
-               Nome e email não podem está vazio.
-            </div>
-        {% endif %}  
-        {% if status == '2'  %}
-            <div class="alert alert-danger" role="alert">
-               Sua Senha deve ter no minimo 8 caracteres
-            </div>
-        {% endif %}
-
-        {% if status == '3'  %}
-            <div class="alert alert-danger" role="alert">
-               Email já cadastrado
-            </div>
-        {% endif %}
-        {% if status == '4'  %}
-            <div class="alert alert-danger" role="alert">
-               Erro inteno do sistema
-            </div>
-        {% endif %}
-
         <div class="row">
             <div class="col-md-3">
 
