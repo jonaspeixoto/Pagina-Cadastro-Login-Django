@@ -131,9 +131,9 @@ SESSION_COOKIE_AGE = 60 * 5
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Django message
+#Django message
 
-MESSAGES_TAGS = {
+MESSAGE_TAGS = {
     constants.DEBUG:'alert-primary',
     constants.ERROR:'alert-danger',
     constants.SUCCESS:'alert-success',

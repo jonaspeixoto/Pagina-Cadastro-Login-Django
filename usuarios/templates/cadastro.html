@@ -5,10 +5,10 @@
     <div class="container" >
         <br>
         {% if messages %}
-            {% for i in massages %}
-            <div class="alert {{i.tags}} " role="alert">
-                {{i}}
-            </div>
+            {% for i in messages %}
+                <div class="alert {{i.tags}}" role="alert" >
+                    {{i}} 
+                </div>
             {% endfor %}
         {% endif %}
         <div class="row">

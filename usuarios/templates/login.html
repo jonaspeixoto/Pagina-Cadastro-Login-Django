@@ -5,15 +5,15 @@
 
 {% block 'conteudo' %} 
     <div class="container" >
-
+        <br>
         {% if messages %}
-            {% for i in massages %}
-            <div class="alert {{i.tags}} " role="alert">
-                {{i}}
-            </div>
+            {% for i in messages %}
+                <div class="alert {{i.tags}}" role="alert" >
+                    {{i}} 
+                </div>
             {% endfor %}
         {% endif %}
-        <br>
+
         <div class="row">
             <div class="col-md-3">
 
@@ -23,8 +23,8 @@
                 <h1>Logar</h1>
                 <hr>
                 <form method="POST" action="{% url 'valida_login' %}"> {% csrf_token %}
-                    <label ">Email:</label>
-                    <input name="email" class="form-control" type="email" placeholder="Esmail...">
+                    <label ">Nome:</label>
+                    <input name="nome" class="form-control" type="text" placeholder="Esmail...">
                     <br>
                     <label ">Senha:</label>
                     <input name="senha" class="form-control" type="password" placeholder="Senha...">
